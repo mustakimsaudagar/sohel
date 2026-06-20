@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Brother Sohel ❤️</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1a1a40,#4a148c,#ff4081);
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+}
+
+.container{
+    text-align:center;
+    color:white;
+    z-index:2;
+}
+
+h1{
+    font-size:50px;
+    animation:glow 2s infinite alternate;
+}
+
+p{
+    font-size:24px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
+
+button{
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:#fff;
+    color:#e91e63;
+    font-weight:bold;
+    margin-top:25px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    animation:float 8s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px #fff,0 0 20px #ff4081; }
+    to{ text-shadow:0 0 20px #fff,0 0 40px #ff4081,0 0 60px #ff4081; }
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:1;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ Dear Sohel ❤️</h1>
+
+    <p>
+        You are an amazing brother. Your kindness, support,
+        and care make our family stronger every day.
+        I am lucky to have a brother like you.
+        Keep smiling and shining. You are truly special! turuti 
+    </p>
+
+    <button onclick="speakMessage()">🎤 Play Voice Message</button>
+</div>
+
+<script>
+// Floating hearts
+for(let i=0;i<40;i++){
+    let heart=document.createElement("div");
+    heart.innerHTML="❤️";
+    heart.className="heart";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*30)+"px";
+    heart.style.animationDuration=(5+Math.random()*5)+"s";
+    document.body.appendChild(heart);
+}
+
+// Voice message
+function speakMessage(){
+    let msg = new SpeechSynthesisUtterance(
+        "Hello Sohel. I just want to tell you that you are an amazing brother. Thank you for always being supportive and caring. Your kindness and smile make everyone happy. I am proud to have a brother like you. Stay happy, stay strong, and keep shining. We all love you very much, Sohel."
+    );
+    msg.rate = 0.9;
+    msg.pitch = 1.1;
+    speechSynthesis.speak(msg);
+}
+</script>
+
+</body>
+</html>
